@@ -1,0 +1,7 @@
+{
+    "name": "Japanese_Layouts",
+    "version_number": "1.0.0",
+    "website_url": "https://github.com/CelestialMods/JPLayouts.git",
+    "description": "Never liked the American layouts? Well this patches in the Japanese ones! Currently supported: - Deku Palace",
+    "dependencies": []
+}

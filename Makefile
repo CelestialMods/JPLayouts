@@ -74,6 +74,9 @@ C_SRCS := $(shell find src -type f -name '*.c')
 C_OBJS := $(patsubst src/%.c, $(BUILD_DIR)/%.o, $(C_SRCS))
 C_DEPS := $(patsubst src/%.c, $(BUILD_DIR)/%.d, $(C_SRCS))
 
+$(ASSETS_INCLUDE_DIR):
+	$(call call_python_func,create_asset_archive,\"$(ASSETS_INCLUDE_DIR)\")
+
 nrm: $(MOD_FILE)
 
 $(MOD_FILE): $(RECOMP_MOD_TOOL) $(MOD_ELF)
