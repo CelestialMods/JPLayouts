@@ -18,5 +18,3 @@ This mod adds the different layouts from the Japanese version of the game.
 ## Contact
 
 If you encounter an issue, feel free to open an issue, or to contact me on my [Discord server](https://discord.gg/DEZzYzk7Uw) (keep in mind both the mods and the server are still in development!)
-
-<iframe src="https://canary.discord.com/widget?id=1336016385200881828&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
