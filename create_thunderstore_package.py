@@ -124,6 +124,7 @@ def create_archive(package_dir: Path, dst_path: Path):
   new_zip.close()
 
 def create_package():
+  bm.run_build([])
   fully_collected = True
 
   if not package_dir.is_dir():
