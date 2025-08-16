@@ -49,7 +49,7 @@ def get_package_manifest() ->dict[str, str]:
     "name":  slugify(info.mod_data["manifest"]["display_name"]),
     "version_number":  info.mod_data["manifest"]["version"],
     "website_url":  get_website_url(),
-    "description":  get_description(),
+    "description":  info.mod_data["manifest"]["short_description"],
     "dependencies":  []
   }
 
