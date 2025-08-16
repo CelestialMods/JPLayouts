@@ -65,9 +65,6 @@ jobs:
           body_path: ./thunderstore_package/CHANGELOG.md
           files: |
             ./thunderstore_package/*.nrm
-            ./thunderstore_package/*.dll
-            ./thunderstore_package/*.dylib
-            ./thunderstore_package/*.so
             ./*thunderstore.zip
           make_latest: true
 
