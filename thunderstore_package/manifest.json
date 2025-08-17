@@ -1,7 +1,7 @@
 {
     "name": "Japanese_Layouts",
-    "version_number": "1.0.1",
+    "version_number": "1.0.2",
     "website_url": "https://github.com/CelestialMods/JPLayouts.git",
     "description": "Adds the few layouts of the Japanese version.",
-    "dependencies": []
+    "dependencies": ["ProxyMM-ActorListIndex-0.0.3"]
 }

@@ -54,9 +54,7 @@ RECOMP_MOD_TOOL := $(N64RECOMP_BUILD_DIR)/RecompModTool
 OFFLINE_MOD_TOOL := $(N64RECOMP_BUILD_DIR)/OfflineModRecomp
 
 MOD_FILE := $(call get_python_func,get_mod_file,)
-$(info MOD_FILE = $(MOD_FILE))
 MOD_ELF  := $(call get_python_func,get_mod_elf,)
-$(info MOD_ELF = $(MOD_ELF))
 
 LDSCRIPT := mod.ld
 CFLAGS   := -target mips -mips2 -mabi=32 -O2 -G0 -mno-abicalls -mno-odd-spreg -mno-check-zero-division \
