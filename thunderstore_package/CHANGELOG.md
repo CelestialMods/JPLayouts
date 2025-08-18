@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## Version 1.1.0
+* Add Great Bay Coast layout.
+
 ## Version 1.0.2
 * Add missing dependency on Thunderstore.
 
@@ -7,5 +10,4 @@
 * Fix README.md.
 
 ## Version 1.0.0
-
 * Initial release, with Deku Palace.
