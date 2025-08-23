@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Version 1.2.0
+* Add Stone Tower layout.
+* Add Stone Tower Temple layout.
+
 ## Version 1.1.0
 * Add Great Bay Coast layout.
 

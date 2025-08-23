@@ -5,19 +5,12 @@
 
 #include "actor_to_string.h"
 #include "global_variables.h"
+#include "helpers.h"
 
 #define CUR_ROOM(play) ((play)->roomCtx.curRoom.num)
 
 RECOMP_IMPORT("ProxyMM_ActorListIndex", s32 GetActorListIndex(Actor *actor));
 
-void CelestialMods_SetActorPos(Actor *actor, f32 x, f32 y, f32 z)
-{
-  if (actor != NULL)
-  {
-    Vec3f pos = {x, y, z};
-    actor->home.pos = actor->world.pos = pos;
-  } 
-}
 RECOMP_CALLBACK("*", recomp_after_actor_init)
 void DekuPalace_AfterActorInit(PlayState *play, Actor *actor)
 {
@@ -75,10 +68,6 @@ Actor *CelestialMods_SpawnTorch(PlayState *play, float x, float y, float z)
   return Actor_Spawn(&play->actorCtx, play, ACTOR_OBJ_SYOKUDAI, x, y, z, 0, 0, 0, objSyokudai_params);
 }
 
-Actor *CelestialMods_SpawnWithCutscene(PlayState *play, s16 actorId, f32 x, f32 y, f32 z, s16 rotX, s16 rotY, s16 rotZ, s32 params, u32 csId)
-{
-  return Actor_SpawnAsChildAndCutscene(&play->actorCtx, play, actorId, x, y, z, rotX, rotY, rotZ, params, csId, HALFDAYBIT_ALL, NULL);
-}
 
 void DekuPalace_JpLayout(PlayState *play)
 {
@@ -91,7 +80,6 @@ void DekuPalace_JpLayout(PlayState *play)
   if (current_room == CUR_ROOM(play))
     return;
 
-  Actor *ana;
   current_room = CUR_ROOM(play);
   switch (CUR_ROOM(play))
   {
