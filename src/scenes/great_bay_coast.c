@@ -3,32 +3,16 @@
 #include "segmented_address.h"
 #include "recomputils.h"
 
-#define DEFINE_SCENE(name, _enumValue, textId, drawConfig, _restrictionFlags, _persistentCycleFlags) \
-  DECLARE_ROM_SEGMENT(name)
-#define DEFINE_SCENE_UNSET(_enumValue)
-
-#include "tables/scene_table.h"
-
-#undef DEFINE_SCENE
-#undef DEFINE_SCENE_UNSET
+#include "scene_segments.h"
+#include "global_variables.h"
 
 extern Vtx Z2_30GYOSON_room_00Vtx_012038[];
 extern Vtx Z2_30GYOSON_room_00Vtx_012BC8[];
 extern Vec3s Z2_30GYOSONCollisionHeader_0093F4Vertices[];
 extern u16 Z2_30GYOSONCollisionHeader_0093F4Polygons[];
 
-RoomContext *gRoomCtx;
-s8 gRoomStatus;
-
-RECOMP_HOOK("Room_ProcessRoomRequest")
-void on_process_room_request(PlayState *play, RoomContext *roomCtx)
-{
-  gRoomCtx = roomCtx;
-  gRoomStatus = roomCtx->status;
-}
-
 RECOMP_HOOK_RETURN("Room_ProcessRoomRequest")
-void after_process_room_request()
+void GreatBayCoast_ProcessedRoomRequest(void)
 {
   if (gRoomCtx->status == 0 && gRoomStatus == 1)
   {
@@ -36,19 +20,16 @@ void after_process_room_request()
     {
       Vtx *vtxToReplace = (Vtx *)Lib_SegmentedToVirtual(Z2_30GYOSON_room_00Vtx_012038);
       for (u16 i = 0; i < 44; i++)
-      {
         vtxToReplace[i].n.ob[1] += 25;
-      }
+
       vtxToReplace = (Vtx *)Lib_SegmentedToVirtual(Z2_30GYOSON_room_00Vtx_012BC8);
       for (u16 i = 0; i < 4; i++)
-      {
         vtxToReplace[i].n.ob[1] += 25;
-      }
+
       Vec3s *vecToReplace = (Vec3s *)Lib_SegmentedToVirtual(Z2_30GYOSONCollisionHeader_0093F4Vertices);
       for (u16 i = 0; i < 8; i++)
-      {
         vecToReplace[558 + i].y += 25;
-      }
+
       u16 *collisionPolyToReplace = (u16 *)Lib_SegmentedToVirtual(Z2_30GYOSONCollisionHeader_0093F4Polygons);
 
       collisionPolyToReplace[0x187f] = -40;

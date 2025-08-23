@@ -1,5 +1,3 @@
-# Config file for an example Majora's Mask: Recompiled mod.
-
 # Fields that end up in the mod's manifest.
 [manifest]
 
@@ -8,7 +6,7 @@
 id = "CelestialMods_JPLayouts"
 
 # Version of this mod.
-version = "1.1.0"
+version = "1.2.0"
 
 # The name that will show up for this mod in the mod menu. This should be human readable.
 display_name = "Japanese Layouts"
@@ -19,7 +17,9 @@ Never liked the American layouts? Well this patches in the Japanese ones!
 
 Currently supported:
 - Deku Palace
-- Great Bay Coast"""
+- Great Bay Coast
+- Stone Tower
+- Stone Tower Temple"""
 
 # A short description that will show up in this mod's entry in the mod list. This should be human readable and kept short
 # to prevent it from being cut off due to the limited space.
@@ -35,16 +35,7 @@ game_id = "mm"
 minimum_recomp_version = "1.2.0"
 
 # Dependency mods. Each entry is the mod's ID and then an optional minimum version of the dependency mod.
-dependencies = [
-# Example dependency:
-    "ProxyMM_ActorListIndex:0.0.3"
-]
-
-# Native libraries (e.g. DLLs) and the functions they export.
-native_libraries = [
-# Example native library:
-#    { name = "my_native_library", funcs = ["my_native_library_function"] }
-]
+dependencies = [ "ProxyMM_ActorListIndex:0.0.3" ]
 
 # Inputs to the mod tool.
 [inputs]
